@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using DungeonLibrary;
 
 namespace Dungeon
@@ -23,12 +24,19 @@ namespace Dungeon
                 $"Max Life : {c1.MaxLife}\n" +
                 $"Life : {c1.Life}\n" +
                 $"Hit Chance : {c1.HitChance}%\n" +
-                $"Block Power {c1.Block}");
+                $"Block Power {c1.Block}\n\n");
 
             Weapon w1 = new Weapon()
             {
-
+                Name = "Atreus Bow",
+                MaxDamage = 13,
+                MinDamage = 8,
+                BonusHitChance = 25,
+                IsTwoHanded = true,
+                WeaponType = WeaponTypeEnum.Bow
             };
+            Console.WriteLine("\n");
+            Console.WriteLine(w1);
         }
     }
 }

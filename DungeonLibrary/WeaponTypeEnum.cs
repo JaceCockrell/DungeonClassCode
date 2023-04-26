@@ -15,6 +15,6 @@ namespace DungeonLibrary
         Blades_of_Chaos,
         Guardian_Shield,
         Valkyrie_Armor,
-        Atreus_Bow,
+        Bow,
     }
 }
