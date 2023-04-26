@@ -64,11 +64,11 @@
 
 
         //Constructors Life = life -> life = Maxlife
-        public Character(string name, int maxLife, int life, int hitChance, int block)
+        public Character(string name, int hitChance, int block, int maxLife)
         {
             Name = name;
             MaxLife = maxLife;
-            Life = life;
+            Life = maxLife;
             HitChance = hitChance;
             Block = block;
         }
@@ -77,7 +77,7 @@
         }
         public override string ToString()
         {
-            return $"{Name}\n" +
+            return $"---{Name}---\n" +
                 $"Maximum Life: {MaxLife}\n" +
                 $"Current Life: {Life}\n" +
                 $"Hit Chance: {HitChance}\n" +

@@ -22,8 +22,8 @@ namespace DungeonLibrary
 
 
         //Fields
-        private int _minDamage;
         private int _maxDamage;
+        private int _minDamage;
         private string _name;
         private int _bonusHitChance;
         private bool _isTwoHanded;
@@ -48,7 +48,7 @@ namespace DungeonLibrary
                 if (value < 1)
                     _minDamage = 1;
                 else if (value > MaxDamage)
-                    _minDamage = MaxDamage;
+                    _minDamage = MaxDamage - 1;
                 else
 
                     _minDamage = value;
@@ -66,7 +66,7 @@ namespace DungeonLibrary
         }
         //Constructors
         //Fully Qualified ctor - accepts parameters for each of the objects properties.
-        public Weapon(string name, int maxDamage, int minDamage, int bonusHitChance, bool isTwoHanded)
+        public Weapon(string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded)
         {
             //Assignment 
             //properties = parameter
@@ -91,7 +91,7 @@ namespace DungeonLibrary
                 $"Maximum Damage: {MaxDamage}\n" +
                 $"Minimum Damage: {MinDamage}\n" +
                 $"Bonus Hits Chance: {BonusHitChance}\n" +
-                $"Two-Handed: {IsTwoHanded} ";
+                $"Two-Handed: {IsTwoHanded}";
         }
 
 

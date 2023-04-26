@@ -24,6 +24,11 @@ namespace Dungeon
                 $"Life : {c1.Life}\n" +
                 $"Hit Chance : {c1.HitChance}%\n" +
                 $"Block Power {c1.Block}");
+
+            Weapon w1 = new Weapon()
+            {
+
+            };
         }
     }
 }
