@@ -27,7 +27,7 @@ namespace DungeonLibrary
         private string _name;
         private int _bonusHitChance;
         private bool _isTwoHanded;
-
+        private WeaponTypeEnum _weaponType;
 
         //Properties
         public string Name
@@ -64,10 +64,18 @@ namespace DungeonLibrary
             get { return _isTwoHanded; }
             set { _isTwoHanded = value; }
         }
+        public WeaponTypeEnum WeaponType
+        {
+            get { return _weaponType; }
+            set { _weaponType = value; }
+        }
+        
         //Constructors
         //Fully Qualified ctor - accepts parameters for each of the objects properties.
-        public Weapon(string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded)
+        //TODO parameter weapon
+        public Weapon(string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded, WeaponTypeEnum weaponType)
         {
+         
             //Assignment 
             //properties = parameter
             //PascalCase = camelCase
@@ -76,6 +84,7 @@ namespace DungeonLibrary
             MinDamage = minDamage;
             BonusHitChance = bonusHitChance;
             IsTwoHanded = isTwoHanded;
+            WeaponType = weaponType;
             
            
             
@@ -91,7 +100,9 @@ namespace DungeonLibrary
                 $"Maximum Damage: {MaxDamage}\n" +
                 $"Minimum Damage: {MinDamage}\n" +
                 $"Bonus Hits Chance: {BonusHitChance}\n" +
-                $"Two-Handed: {IsTwoHanded}";
+                $"Two-Handed: {IsTwoHanded}\n" +
+                $"Weapon Type: {WeaponType.ToString().Replace('_', ' ')}";
+            //TODO add weaponType to ToString
         }
 
 
