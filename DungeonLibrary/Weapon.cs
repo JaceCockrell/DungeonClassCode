@@ -100,7 +100,7 @@ namespace DungeonLibrary
                 $"Maximum Damage: {MaxDamage}\n" +
                 $"Minimum Damage: {MinDamage}\n" +
                 $"Bonus Hits Chance: {BonusHitChance}\n" +
-                $"Two-Handed: {(IsTwoHanded ? "Two" : "One")}-Handed\n" +
+                $"{(IsTwoHanded ? "Two" : "One")}-Handed\n" +
                 $"Weapon Type: {WeaponType.ToString().Replace('_', ' ')}";
             //TODO add weaponType to ToString
         }
