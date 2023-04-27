@@ -72,7 +72,7 @@ namespace DungeonLibrary
         
         //Constructors
         //Fully Qualified ctor - accepts parameters for each of the objects properties.
-        //TODO parameter weapon
+        
         public Weapon(string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded, WeaponTypeEnum weaponType)
         {
          
@@ -102,7 +102,7 @@ namespace DungeonLibrary
                 $"Bonus Hits Chance: {BonusHitChance}\n" +
                 $"{(IsTwoHanded ? "Two" : "One")}-Handed\n" +
                 $"Weapon Type: {WeaponType.ToString().Replace('_', ' ')}";
-            //TODO add weaponType to ToString
+            
         }
 
 
