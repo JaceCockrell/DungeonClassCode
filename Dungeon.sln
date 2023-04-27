@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dungeon", "DungeonApp\Dunge
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonLibrary", "DungeonLibrary\DungeonLibrary.csproj", "{8E6E81AC-CEC3-45FC-B85C-6BF561517075}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Block4", "Block4\Block4.csproj", "{2A88AFF0-9E27-4D77-AC0E-9A8931E04427}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8E6E81AC-CEC3-45FC-B85C-6BF561517075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E6E81AC-CEC3-45FC-B85C-6BF561517075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E6E81AC-CEC3-45FC-B85C-6BF561517075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A88AFF0-9E27-4D77-AC0E-9A8931E04427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A88AFF0-9E27-4D77-AC0E-9A8931E04427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A88AFF0-9E27-4D77-AC0E-9A8931E04427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A88AFF0-9E27-4D77-AC0E-9A8931E04427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
