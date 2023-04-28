@@ -70,6 +70,7 @@ namespace DungeonLibrary
                 $"Hit-Chance: {HitChance}\n" +
                 $"Block: {Block}\n" +
                 $"Max Life {MaxLife}";
+            //to write cw tab (m1)
         }
 
          // Override the ToString() to include custom props
