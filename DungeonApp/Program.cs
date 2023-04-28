@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using DungeonLibrary;
+using System.Net.Http.Headers;
 
 namespace DungeonApp
 {
@@ -16,9 +17,12 @@ namespace DungeonApp
 
             //TODO - variable to keep score
 
+            int score = 0;
             //TODO - Create a weapon
-
-            //TODO - Create a Player
+            Weapon wep = new("Blades of Chaos", 1, 8, 10, true, WeaponType.Blades_of_Chaos);
+            //TODO - Create a Player Object
+            //Recomended expansion let the user pick and chose name and race
+            Player player = new Player("Kratos", 70, 15, 40, Race.Olympians, wep);
 
             //Main Game Loop
             bool lose = false;//Main Game Loop
@@ -26,7 +30,8 @@ namespace DungeonApp
             {
                 //Generate a room
                 Console.WriteLine(GetRoom());
-
+                Monster monster = GetMonster();
+                Console.WriteLine("In this room: " + monster );
                 //TODO - Generate a monster
                 #region Main Menu
                 //Encounter/Menu Loop 
@@ -48,14 +53,32 @@ namespace DungeonApp
                     switch (choice)
                     {
                         case ConsoleKey.A://TODO Combat
+                            Combat.DoBattle(player, monster);
+                            //check if the monster is dead
+                            if (monster.Life <= 0)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"\nYou killed {monster.Name}\n");
+                                Console.ResetColor();
+                                reload = true;
+                                score++;
+                                //could add rewards
+                            }
                             break;
                         case ConsoleKey.R://TODO Run Away
                             Console.WriteLine("Run Away!!");
+                            //Attack of oppertunity
+                            Combat.DoAttack(monster, player);
                             reload = true;
                             break;
                         case ConsoleKey.P://TODO Player
+                            Console.WriteLine("Player Info");
+                            Console.WriteLine(player);
+                            Console.WriteLine("You have defeated " + score + " monsters.");
                             break;
                         case ConsoleKey.M://TODO Monster
+                            Console.WriteLine("Monster Info");
+                            Console.WriteLine(monster);
                             break;
                         case ConsoleKey.Escape:
                         case ConsoleKey.X:
@@ -66,14 +89,20 @@ namespace DungeonApp
                             Console.WriteLine("\aWhat does that even mean!? Try again, but better..");
                             break;
                     }//end switch
-                    //TODO Check player life. if dead GAME OVER
+                    // Check player life. if dead GAME OVER
                 } while (!reload && !lose);//While reload and lose are both false keep looping
 
+                if (player.Life <= 0)
+                {
+                    Console.WriteLine("\a\aYou died...");
+                    lose = true;
+                }
                 #endregion
 
             } while (!lose);// while lose is false keep looping
 
             //Output final score
+            Console.WriteLine("You have defeated " + score + $" monster{(score == 1 ? "." :"s.")}");
         }//main()
 
         //TODO GetRoom() returns string (kinda like magic 8 ball lab)
@@ -97,7 +126,23 @@ namespace DungeonApp
             //Refactoring
             //return rooms[new Random().Next(rooms.Length)];
         }//end GetRoom
+        private static Monster GetMonster()
+        {
+            Monster m1 = new Monster("Test Monster", 50, 40, 20, 1, 8, "He doesn't even know what a test is..");
+            Monster m2 = new Monster("t2", 40, 50, 30, 1, 8, "The other t");
+            Monster m3 = new Monster("t3", 70, 30, 10, 1, 8, "The third t");
+            Monster m4 = new Monster("t4", 15, 25, 60, 1, 8, "The fourth t");
 
+            Monster[] monsters =
+            {
+                m1,m1,
+                m2,
+                m3,
+                m4,m4,m4,m4,
+            };
+
+            return monsters[new Random().Next(monsters.Length)];
+        }
 
     }//program
 }//name

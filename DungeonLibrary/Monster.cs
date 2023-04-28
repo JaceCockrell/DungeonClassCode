@@ -42,8 +42,13 @@ namespace DungeonLibrary
         
         //maxdam int
         //string description
-        public Monster(string name, string description, int maxDamage, int minDamage, int hitChance, int block, int maxLife) : base(name, hitChance, block, maxLife)
+        public Monster(string name, int hitChance, int block, int maxLife, int minDamage, int maxDamage, string description) : base(name, hitChance, block, maxLife)
         {
+            if (maxDamage <= minDamage || minDamage <= 0)
+            {
+                throw new ArgumentException("Min Damage must be between zero and Max Damage");
+            }
+
             Description = description;
             MaxDamage = maxDamage;
             MinDamage = minDamage;

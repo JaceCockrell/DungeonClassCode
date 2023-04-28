@@ -34,7 +34,7 @@ namespace DungeonLibrary
         private string _name;
         private int _bonusHitChance;
         private bool _isTwoHanded;
-        private WeaponTypeEnum _weaponType;
+        private WeaponType _weaponType;
 
         //Properties
         public string Name
@@ -71,7 +71,7 @@ namespace DungeonLibrary
             get { return _isTwoHanded; }
             set { _isTwoHanded = value; }
         }
-        public WeaponTypeEnum WeaponType
+        public WeaponType WeaponType
         {
             get { return _weaponType; }
             set { _weaponType = value; }
@@ -80,7 +80,7 @@ namespace DungeonLibrary
         //Constructors
         //Fully Qualified ctor - accepts parameters for each of the objects properties.
         
-        public Weapon(string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded, WeaponTypeEnum weaponType)
+        public Weapon(string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded, WeaponType weaponType)
         {
          
             //Assignment 
