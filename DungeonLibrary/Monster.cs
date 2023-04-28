@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DungeonLibrary
+{
+    public class Monster : Character
+    {
+        private int _minDamage;
+        private int _maxDamage;
+        private string _description;
+        //^Fields
+        public int MaxDamage
+        {
+            get { return _maxDamage; }
+            set { _maxDamage = value; }
+        }
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+        public int MinDamage
+        {
+            get { return _minDamage; }
+            set
+            {
+                if (value > 0 && value < MaxDamage)
+                {
+                    _minDamage = value;
+                }
+                else
+                {
+                    _minDamage = 1;
+                }
+            }
+        }
+        // ^props
+        
+        
+        //maxdam int
+        //string description
+        public Monster(string name, string description, int maxDamage, int minDamage, int hitChance, int block, int maxLife) : base(name, hitChance, block, maxLife)
+        {
+            Description = description;
+            MaxDamage = maxDamage;
+            MinDamage = minDamage;
+            
+            
+           //create the properties above,                        *|
+            ////add parameters to the constructor                      *|
+            /////and asign properties inside the constructor. Pascal = Camel
+
+        }
+        public Monster() { }
+        public override int CalcDamage()
+        {
+        //TODO override CalcDamage()
+            //return a random number between the MaxDamage property and the MinDamage property
+            return new Random().Next(MinDamage, MaxDamage + 1);
+        }
+        public override string ToString()
+        {
+            return $"Name: {Name}\n" +
+                $"Description: {Description}\n" +
+                $"Maximum Damage: {MaxDamage}\n" +
+                $"Minimum Damage: {MinDamage}\n" +
+                $"Hit-Chance: {HitChance}\n" +
+                $"Block: {Block}\n" +
+                $"Max Life {MaxLife}";
+        }
+
+         // Override the ToString() to include custom props
+    }
+}
