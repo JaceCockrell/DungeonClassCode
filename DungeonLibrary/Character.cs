@@ -1,6 +1,8 @@
 ﻿namespace DungeonLibrary
 {
-    public class Character
+    //abstract marks the class as incomplete it must be inherited somewhere to be used.
+    //abstract classes cannot be created as an object using the "new()"
+    public abstract class Character//: object
     {
         /*
          
@@ -77,7 +79,7 @@
         }
         public override string ToString()
         {
-            return $"---{Name}---\n" +
+            return $"---v {Name} v---\n" +
                 $"Maximum Life: {MaxLife}\n" +
                 $"Current Life: {Life}\n" +
                 $"Hit Chance: {HitChance}\n" +
@@ -86,20 +88,47 @@
 
         }
         //Methods
-       public int CalcBlock() 
+       public virtual int CalcBlock() 
         {
             return Block; 
         }
-        public int CalcHitChance()
+        public virtual int CalcHitChance()
         {
             return HitChance;
         }
-        public int CalcDamage()
-        {
-            return 0;
-        }
+        public abstract int CalcDamage();
+        // an abstract will have no functionality, no scopes
+        //makes override MANDATORY
+        #region Recursion Example
 
-        
+        /*                     ===private static int RecursiveCountdown(int value)===
+        *   {
+        *       if (value == 0)
+        *       {
+        *       return value;
+        *       }
+        *       else
+        *       {
+        *       Console.WriteLine(value);
+        *       return RecursiveCountdown(value - 1);
+        *       }
+        *   }
+        *                   Code Explanation
+        *                   The RecursiveCountdown method above will allow a
+        *                   positive value to be passed in by the program. As it
+        *                   executes, it checks the value and if the value is 0, it simply
+        *                   returns 0. However, anything above 0 will result in sharing
+        *                   the value to the screen, decrementing the value, and calling
+        *                   the method again.
+        *                               Recursion happens when a
+        *                               method calls upon itself until a
+        *                               specific condition is met to
+        *                               achieve specific functionality
+        */
+        #endregion
+
+
+
 
 
     }

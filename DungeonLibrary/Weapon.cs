@@ -16,6 +16,13 @@ namespace DungeonLibrary
             name – string
             bonusHitChance – int
             isTwoHanded - bool
+            
+            
+            Leviathan Axe
+            Blades of Chaos
+            Guardian Shield
+            Valkyrie Armor
+            Atreus' Bow
       
          */
 
