@@ -135,7 +135,7 @@ namespace DungeonApp
 
             Monster[] monsters =
             {
-                m1,m1,
+                m1,m1,m1,
                 m2,
                 m3,
                 m4,m4,m4,m4,
