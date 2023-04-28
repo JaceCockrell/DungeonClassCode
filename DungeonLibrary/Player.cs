@@ -26,7 +26,7 @@ namespace DungeonLibrary
                     HitChance += 6;
                     break;
                 case Race.Giants:
-                    Block += 8;
+                    EquipedWeapon.MaxDamage += 8;
                     break;
                 case Race.Titans:
                     HitChance += 8;
@@ -43,26 +43,27 @@ namespace DungeonLibrary
             #endregion
             #endregion
         }// end ctor
+        public Player() { }
         public override string ToString()
         {
             string raceDescription = "";
             switch (PlayerRace)
             {
-                case Race.Olympians: raceDescription = "The powerful and godly rulers of Mount Olympus.";
+                case Race.Olympians: raceDescription ="The powerful and godly rulers of Mount Olympus.";
                     break;
-                case Race.Giants: raceDescription = "Massive and ancient beings with incredible strength and magical abilities.";
+                case Race.Giants: raceDescription ="Massive and ancient beings with incredible strength and magical abilities.";
                     break;
-                case Race.Titans:raceDescription = "Gigantic and powerful deities that predate the gods and goddesses of Mount Olympus.";
+                case Race.Titans:raceDescription ="Gigantic and powerful deities that predate the gods and goddesses of Mount Olympus.";
                     break;
-                case Race.Valkyries:raceDescription = "Noble warrior maidens who serve the gods and guide the souls of fallen heroes to Valhalla.";
+                case Race.Valkyries:raceDescription ="Noble warrior maidens who serve the gods and guide the souls of fallen heroes to Valhalla.";
                     break;
-                case Race.HelWalkers:raceDescription = "Undead warriors cursed by the goddess of death and sent to serve in her army in the realm of Helheim.";
+                case Race.HelWalkers:raceDescription ="Undead warriors cursed by the goddess of death and sent to serve in her army in the realm of Helheim.";
                     break;
                 default:
                     break;
             }
             return base.ToString() + $"\nWeapon: {EquipedWeapon.Name}\n" +
-                $"Description: \n{raceDescription}";
+                $"Description: {raceDescription}";
             
         }//end ctor
         public override int CalcDamage()
