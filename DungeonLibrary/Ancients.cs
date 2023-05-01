@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Ancient : Monster
+    public sealed class Ancient : Monster
     {
         private bool _isAggressive;
 

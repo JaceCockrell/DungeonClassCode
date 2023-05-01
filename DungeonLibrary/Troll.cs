@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Troll : Monster
+    public sealed class Troll : Monster
     {
         private bool _isClever;
         public bool IsClever

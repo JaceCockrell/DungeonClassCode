@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Player : Character
+    public sealed class Player : Character
     {
         public Race PlayerRace { get; set; }
         public Weapon EquipedWeapon { get; set; }

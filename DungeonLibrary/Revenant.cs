@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Revenant : Monster
+    public sealed class Revenant : Monster
     {
         private bool _isDemonic;
 

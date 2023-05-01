@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Monster : Character
+    public abstract class Monster : Character
     {
         private int _minDamage;
         private int _maxDamage;
