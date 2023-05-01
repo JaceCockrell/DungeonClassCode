@@ -55,8 +55,8 @@ namespace DungeonLibrary
             
             
            //create the properties above,                        *|
-            ////add parameters to the constructor                      *|
-            /////and asign properties inside the constructor. Pascal = Camel
+            //add parameters to the constructor                      *|
+            //and asign properties inside the constructor. Pascal = Camel
 
         }
         public Monster() { }
