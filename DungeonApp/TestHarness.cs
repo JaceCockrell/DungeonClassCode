@@ -33,14 +33,14 @@ namespace Dungeon
             //TODO test monster creation and ToString(), calcblocl, calcdamage, calchitchance
             Weapon w1 = new Weapon("Atreus' Compact bow", 1, 10, 0, true, WeaponType.Bow);
             Player player = new Player($"Atreus", 80, 20, 100, Race.Giants, w1);
-            Monster m1 = new Monster($"Test Monster", 50, 40, 20, 1, 8, "He doesn't even know what a test is..");
+            //Monster m1 = new Monster($"Test Monster", 50, 40, 20, 1, 8, "He doesn't even know what a test is..");
+            Draugr m1 = new Draugr("Draugr", 50, 40, 20, 1, 8, "Undead creatures that come in various types and have different abilities.", true);
 
-            
             while (true)
             {
                 Combat.DoBattle(player, m1);
                 Console.WriteLine("Player Life: " + player.Life);
-                Console.WriteLine("Monster Life: " + m1.Life);
+                Console.WriteLine("Monster Max Damage: " + m1.MaxDamage + " Monster Damage " + m1.CalcDamage());
                 Console.ReadKey();
                 Console.Clear();
             }

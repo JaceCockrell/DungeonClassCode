@@ -79,11 +79,11 @@
         }
         public override string ToString()
         {
-            return $"---v {Name} v---\n" +
+            return $"---= {Name} =---\n" +
                 $"Maximum Life: {MaxLife}\n" +
                 $"Current Life: {Life}\n" +
                 $"Hit Chance: {HitChance}\n" +
-                $"Block: {Block}";
+                $"Block: {Block}\n";
 
 
         }
