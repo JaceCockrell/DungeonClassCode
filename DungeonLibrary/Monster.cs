@@ -68,13 +68,13 @@ namespace DungeonLibrary
         }
         public override string ToString()
         {
-            return $"Name: {Name}\n" +
-                $"Description: {Description}\n" +
+            return //$"Name: {Name}\n" +
+                base.ToString() + $"Description: {Description}\n" +
                 $"Maximum Damage: {MaxDamage}\n" +
-                $"Minimum Damage: {MinDamage}\n" +
-                $"Hit-Chance: {HitChance}\n" +
-                $"Block: {Block}\n" +
-                $"Max Life {MaxLife}";
+                $"Minimum Damage: {MinDamage}\n";
+               // $"Hit-Chance: {HitChance}\n" +
+               // $"Block: {Block}\n" +
+               // $"Max Life {MaxLife}";
             //to write cw tab (m1)
         }
 

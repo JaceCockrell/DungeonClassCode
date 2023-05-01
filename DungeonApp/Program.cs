@@ -19,10 +19,10 @@ namespace DungeonApp
 
             int score = 0;
             //TODO - Create a weapon
-            Weapon wep = new("Blades of Chaos", 1, 8, 10, true, WeaponType.Blades_of_Chaos);
+            Weapon wep = new("Blades of Chaos", 1, 10, 10, true, WeaponType.Blades_of_Chaos);
             //TODO - Create a Player Object
             //Recomended expansion let the user pick and chose name and race
-            Player player = new Player("Kratos", 70, 15, 40, Race.Olympians, wep);
+            Player player = new Player("Kratos", 70, 20, 40, Race.Olympians, wep);
 
             //Main Game Loop
             bool lose = false;//Main Game Loop
@@ -128,17 +128,25 @@ namespace DungeonApp
         }//end GetRoom
         private static Monster GetMonster()
         {
-            Monster m1 = new Monster("Test Monster", 50, 40, 20, 1, 8, "He doesn't even know what a test is..");
-            Monster m2 = new Monster("t2", 40, 50, 30, 1, 8, "The other t");
-            Monster m3 = new Monster("t3", 70, 30, 10, 1, 8, "The third t");
-            Monster m4 = new Monster("t4", 15, 25, 60, 1, 8, "The fourth t");
+            Draugr m1 = new Draugr("Draugr", 50, 40, 20, 1, 8, "Undead creatures that come in various types and have different abilities.", true);
+            Draugr m2 = new Draugr();
+            Revenant m3 = new Revenant("Revenant", 30, 40, 15, 1, 6, "Ghost-like enemies that are difficult to hit and can move quickly." , false);
+            Revenant m4 = new Revenant();
+            Troll m5 = new Troll("War Troll ", 60, 30, 12, 1, 8, " Large, powerful enemies that can deal heavy damage and require different strategies to defeat.", true);
+            Troll m6 = new Troll();
+            Ancient m7 = new Ancient("t4", 55, 30, 25, 1, 6, "Ancient robotic beings that possess powerful elemental attacks.", true);
+            Ancient m8 = new Ancient();
 
             Monster[] monsters =
             {
-                m1,m1,m1,
-                m2,
+                m1,
+                m2,m2,
                 m3,
-                m4,m4,m4,m4,
+                m4,
+                m5,
+                m6,m6,m6,m6,
+                m7,
+                m8,m8,m8
             };
 
             return monsters[new Random().Next(monsters.Length)];
