@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class Weapon
+    public abstract class Weapon
     {
         /*
          Weapon: Make fields and props for each of these with the appropriate naming conventions.

@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace DungeonLibrary
 {
-    public class Draugr : Monster
+    public sealed class Draugr : Monster
     {
         private bool _isHaunted;
 
