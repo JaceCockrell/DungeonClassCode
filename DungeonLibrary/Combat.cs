@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public abstract class Combat
+    public class Combat
     {
         //This is not a DataType class so we will not have field props or constructors its going to be a warehouse of methods
 
