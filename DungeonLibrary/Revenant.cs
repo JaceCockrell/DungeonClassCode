@@ -30,7 +30,7 @@ namespace DungeonLibrary
             MaxLife = 15;
             MinDamage = 1;
             MaxDamage = 4;
-            Description = " Ghost-like enemies that are difficult to hit and can move quickly.";
+            Description = "Ghost-like enemies that are difficult to hit and can move quickly.";
             IsDemonic = true;
         }
 

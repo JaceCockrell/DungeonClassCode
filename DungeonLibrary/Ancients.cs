@@ -29,7 +29,7 @@ namespace DungeonLibrary
             MaxLife = 15;
             MinDamage = 1;
             MaxDamage = 5;
-            Description = " Ancient robotic beings that possess powerful elemental attacks, this one hasn't quite accessed its full potential ";
+            Description = "Ancient robotic beings that possess powerful elemental attacks, this one hasn't quite accessed its full potential ";
             IsAggressive = false;
         }
 

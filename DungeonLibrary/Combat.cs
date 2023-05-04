@@ -31,13 +31,13 @@ namespace DungeonLibrary
                 defender.Life -= damage;
                 //output the result
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{attacker.Name} hit {defender.Name} for {damage} damage!");
+                Console.WriteLine($"\n{attacker.Name} hit {defender.Name} for {damage} damage!");
                 Console.ResetColor();
             }
 
             else//attacker missed
             {
-                Console.WriteLine($"{attacker.Name} missed!");
+                Console.WriteLine($"\n{attacker.Name} missed!\n");
                 //Console.WriteLine("Roll " + roll);
                 //Console.WriteLine( "Chance: " + chance);
             }

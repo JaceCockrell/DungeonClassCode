@@ -15,14 +15,14 @@ namespace DungeonApp
 
             #endregion
 
-            //TODO - variable to keep score
+            // - variable to keep score
 
             int score = 0;
             //TODO - Create a weapon
-            Weapon wep = new("Blades of Chaos", 1, 10, 10, true, WeaponType.Blades_of_Chaos);
-            //TODO - Create a Player Object
+            Weapon wep = new("Blades of Chaos", 2, 10, 10, true, WeaponType.Leviathan_Axe);
+            // - Create a Player Object
             //Recomended expansion let the user pick and chose name and race
-            Player player = new Player("Kratos", 70, 20, 40, Race.Olympians, wep);
+            Player player = new Player("Kratos", 70, 40, 50, Race.Olympians, wep);
 
             //Main Game Loop
             bool lose = false;//Main Game Loop
@@ -41,7 +41,7 @@ namespace DungeonApp
                     //Print the Menu
                     Console.WriteLine("\nPlease choose an action:\n" +
                         "A. Attack\n" +
-                        "R. Run Away\n" +
+                        "R. Run Away - Enemy may have a chance to attack..\n" +
                         "P. Player Info\n" +
                         "M. Monster Info\n" +
                         "X. Exit");
@@ -52,7 +52,7 @@ namespace DungeonApp
                     //switch
                     switch (choice)
                     {
-                        case ConsoleKey.A://TODO Combat
+                        case ConsoleKey.A:// Combat
                             Combat.DoBattle(player, monster);
                             //check if the monster is dead
                             if (monster.Life <= 0)
@@ -65,7 +65,7 @@ namespace DungeonApp
                                 //could add rewards
                             }
                             break;
-                        case ConsoleKey.R://TODO Run Away
+                        case ConsoleKey.R:// Run Away
                             Console.WriteLine("Run Away!!");
                             //Attack of oppertunity
                             Combat.DoAttack(monster, player);
@@ -74,7 +74,7 @@ namespace DungeonApp
                         case ConsoleKey.P://TODO Player
                             Console.WriteLine("Player Info");
                             Console.WriteLine(player);
-                            Console.WriteLine("You have defeated " + score + " monsters.");
+                            Console.WriteLine("Progress: You have defeated " + score + " monsters.");
                             break;
                         case ConsoleKey.M://TODO Monster
                             Console.WriteLine("Monster Info");
@@ -105,7 +105,7 @@ namespace DungeonApp
             Console.WriteLine("You have defeated " + score + $" monster{(score == 1 ? "." :"s.")}");
         }//main()
 
-        //TODO GetRoom() returns string (kinda like magic 8 ball lab)
+        //GetRoom() returns string (kinda like magic 8 ball lab)
         private static string GetRoom()
         {
             //create string[]
@@ -134,7 +134,7 @@ namespace DungeonApp
             Revenant m4 = new Revenant();
             Troll m5 = new Troll("War Troll ", 60, 30, 12, 1, 8, " Large, powerful enemies that can deal heavy damage and require different strategies to defeat.", true);
             Troll m6 = new Troll();
-            Ancient m7 = new Ancient("t4", 55, 30, 25, 1, 6, "Ancient robotic beings that possess powerful elemental attacks.", true);
+            Ancient m7 = new Ancient("Ancient Gaurdian", 55, 30, 25, 1, 6, "Ancient robotic beings that possess powerful elemental attacks.", true);
             Ancient m8 = new Ancient();
 
             Monster[] monsters =
@@ -145,7 +145,7 @@ namespace DungeonApp
                 m4,
                 m5,
                 m6,m6,m6,m6,
-                m7,
+                m7,m7,
                 m8,m8,m8
             };
 

@@ -27,7 +27,7 @@ namespace DungeonLibrary
             MaxLife = 12;
             MinDamage = 1;
             MaxDamage = 3;
-            Description = " Large, powerful enemies that can deal heavy damage and require different strategies to defeat.";
+            Description = "Large, powerful enemies that can deal heavy damage and require different strategies to defeat.";
             IsClever = false;
         }
         public override int CalcBlock()

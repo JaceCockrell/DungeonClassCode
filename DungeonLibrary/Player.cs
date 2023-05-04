@@ -49,21 +49,21 @@ namespace DungeonLibrary
             string raceDescription = "";
             switch (PlayerRace)
             {
-                case Race.Olympians: raceDescription ="The powerful and godly rulers of Mount Olympus.";
+                case Race.Olympians: raceDescription =" Olympian - The powerful and godly rulers of Mount Olympus.";
                     break;
-                case Race.Giants: raceDescription ="Massive and ancient beings with incredible strength and magical abilities.";
+                case Race.Giants: raceDescription =" Giant - Massive and ancient beings with incredible strength and magical abilities.";
                     break;
-                case Race.Titans:raceDescription ="Gigantic and powerful deities that predate the gods and goddesses of Mount Olympus.";
+                case Race.Titans:raceDescription =" Titian - Gigantic and powerful deities that predate the gods and goddesses of Mount Olympus.";
                     break;
-                case Race.Valkyries:raceDescription ="Noble warrior maidens who serve the gods and guide the souls of fallen heroes to Valhalla.";
+                case Race.Valkyries:raceDescription =" Valkyrie - Noble warrior maidens who serve the gods and guide the souls of fallen heroes to Valhalla.";
                     break;
-                case Race.HelWalkers:raceDescription ="Undead warriors cursed by the goddess of death and sent to serve in her army in the realm of Helheim.";
+                case Race.HelWalkers:raceDescription =" Hel-Walker - Undead warriors cursed by the goddess of death and sent to serve in her army in the realm of Helheim.";
                     break;
                 default:
                     break;
             }
-            return base.ToString() + $"\nWeapon: {EquipedWeapon.Name}\n" +
-                $"Description: {raceDescription}";
+            return base.ToString() + $"Weapon {EquipedWeapon}\n" +
+                $"Race Description: {raceDescription}";
             
         }//end ctor
         public override int CalcDamage()

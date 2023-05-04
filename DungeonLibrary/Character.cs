@@ -83,7 +83,7 @@
                 $"Maximum Life: {MaxLife}\n" +
                 $"Current Life: {Life}\n" +
                 $"Hit Chance: {HitChance}\n" +
-                $"Block: {Block}\n";
+                $"Block: {Block}\n\n";
 
 
         }

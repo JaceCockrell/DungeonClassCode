@@ -35,7 +35,7 @@ namespace DungeonLibrary
             MaxLife = 15;
             MinDamage = 1;
             MaxDamage = 6;
-            Description = " Undead creatures that come in various types and have different abilities, this one has yet to mature..";
+            Description = "Undead creatures that come in various types and have different abilities, this one has yet to mature..";
             IsHaunted = false;
         }
 
