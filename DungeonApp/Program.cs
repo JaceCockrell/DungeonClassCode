@@ -71,12 +71,12 @@ namespace DungeonApp
                             Combat.DoAttack(monster, player);
                             reload = true;
                             break;
-                        case ConsoleKey.P://TODO Player
+                        case ConsoleKey.P:// Player
                             Console.WriteLine("Player Info");
                             Console.WriteLine(player);
                             Console.WriteLine("Progress: You have defeated " + score + " monsters.");
                             break;
-                        case ConsoleKey.M://TODO Monster
+                        case ConsoleKey.M:// Monster
                             Console.WriteLine("Monster Info");
                             Console.WriteLine(monster);
                             break;
