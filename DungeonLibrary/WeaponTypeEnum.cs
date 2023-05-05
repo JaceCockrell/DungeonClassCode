@@ -11,9 +11,9 @@ namespace DungeonLibrary
     // intent of this is to provide potential expansions, such as 
     public enum WeaponType
     {
-        Leviathan_Axe,
-        Blades_of_Chaos,
-        Guardian_Shield,
+        Axe,
+        Daggers,
+        Bare_Hands,
         Valkyrie_Armor,
         Bow,
     }

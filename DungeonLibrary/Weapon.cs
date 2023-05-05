@@ -100,6 +100,7 @@ namespace DungeonLibrary
         {
         }//unqualified
 
+
         //Methods
         public override string ToString()
         {

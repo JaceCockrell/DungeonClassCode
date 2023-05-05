@@ -19,10 +19,22 @@ namespace DungeonApp
 
             int score = 0;
             //TODO - Create a weapon
-            Weapon wep = new("Blades of Chaos", 2, 10, 10, true, WeaponType.Leviathan_Axe);
+            Weapon wep0 = new("Leviathan Axe", 3, 8, 12, true, WeaponType.Axe);
+            Weapon wep1 = new("Blades of Chaos", 2, 10, 10, true, WeaponType.Daggers);
+            Weapon wep2 = new("Guardian Shield", 1, 8, 33, false, WeaponType.Bare_Hands);
+            Weapon wep3 = new("Spear & Wings", 2, 12, 8, true, WeaponType.Valkyrie_Armor);
+            Weapon wep4 = new("Atreus Bow", 2, 12, 15, true, WeaponType.Bow);
+
+            List<Weapon> weapons = new() { wep0, wep1, wep2, wep3, wep4 };
+            int index = 1;
+            foreach (var item in weapons)
+            {
+                Console.WriteLine(index + "" + item.WeaponType); 
+            }
+
             // - Create a Player Object
             //Recomended expansion let the user pick and chose name and race
-            Player player = new Player("Kratos", 70, 40, 50, Race.Olympians, wep);
+            Player player = new Player("Kratos", 70, 40, 50, Race.Olympians, wep1);
 
             //Main Game Loop
             bool lose = false;//Main Game Loop
@@ -31,7 +43,7 @@ namespace DungeonApp
                 //Generate a room
                 Console.WriteLine(GetRoom());
                 Monster monster = GetMonster();
-                Console.WriteLine("In this room: " + monster );
+                Console.WriteLine("In this room: " + monster);
                 //TODO - Generate a monster
                 #region Main Menu
                 //Encounter/Menu Loop 
@@ -83,7 +95,7 @@ namespace DungeonApp
                         case ConsoleKey.Escape:
                         case ConsoleKey.X:
                             Console.WriteLine("No one likes a quitter!");
-                            lose= true;
+                            lose = true;
                             break;
                         default:
                             Console.WriteLine("\aWhat does that even mean!? Try again, but better..");
@@ -102,7 +114,7 @@ namespace DungeonApp
             } while (!lose);// while lose is false keep looping
 
             //Output final score
-            Console.WriteLine("You have defeated " + score + $" monster{(score == 1 ? "." :"s.")}");
+            Console.WriteLine("You have defeated " + score + $" monster{(score == 1 ? "." : "s.")}");
         }//main()
 
         //GetRoom() returns string (kinda like magic 8 ball lab)
@@ -130,7 +142,7 @@ namespace DungeonApp
         {
             Draugr m1 = new Draugr("Draugr", 50, 40, 20, 1, 8, "Undead creatures that come in various types and have different abilities.", true);
             Draugr m2 = new Draugr();
-            Revenant m3 = new Revenant("Revenant", 30, 40, 15, 1, 6, "Ghost-like enemies that are difficult to hit and can move quickly." , false);
+            Revenant m3 = new Revenant("Revenant", 30, 40, 15, 1, 6, "Ghost-like enemies that are difficult to hit and can move quickly.", false);
             Revenant m4 = new Revenant();
             Troll m5 = new Troll("War Troll ", 60, 30, 12, 1, 8, " Large, powerful enemies that can deal heavy damage and require different strategies to defeat.", true);
             Troll m6 = new Troll();
