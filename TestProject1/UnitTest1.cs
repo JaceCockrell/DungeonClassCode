@@ -7,10 +7,23 @@ namespace TestProject1
         [Fact]
         public void TestCalcDamage()
         {
+            Weapon w1 = new Weapon("Atreus' Compact bow", 1, 10, 0, true, WeaponType.E_Bow);
+            Player test = new Player($"Atreus", 80, 20, 100, Race.B_Giants, w1);
+            int actual = test.CalcDamage();
+            bool result = (actual >= 0 && actual <= 10);
+            Assert.True(result);
 
-            Ancient test = new Ancient("Ancient Gaurdian", 55, 30, 25, 1, 6, "Ancient robotic beings that possess powerful elemental attacks.", true);
-            int minDamage = 1, maxDamage = 6;
-            //int actual = test.CalcDamage(minDamage);
+
+
+        }
+        [Fact]
+        public void TestBlock()
+        {
+            Weapon w1 = new("Leviathan Axe", 6, 10, 12, true, WeaponType.A_Axe);
+            Player test = new Player($"Atreus", 80, 20, 100, Race.B_Giants, w1);
+            int actual = test.CalcBlock();
+            Assert.Equal((100-80), actual);
+            
 
 
 
