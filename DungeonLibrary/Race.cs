@@ -13,11 +13,11 @@ namespace DungeonLibrary
 
     public enum Race
     {
-        Olympians,
-        Giants,
-        Titans,
-        Valkyries,
-        HelWalkers
+        A_Olympians = 1,
+        B_Giants,
+        C_Titans,
+        D_Valkyries,
+        E_HelWalkers
 
     }
 }

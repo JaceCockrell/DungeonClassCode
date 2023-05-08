@@ -25,6 +25,7 @@ namespace DungeonLibrary
             HitChance = 25;
             Block = 10;
             MaxLife = 12;
+            Life = MaxLife;
             MinDamage = 1;
             MaxDamage = 3;
             Description = "Large, powerful enemies that can deal heavy damage and require different strategies to defeat.";

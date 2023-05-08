@@ -33,6 +33,7 @@ namespace DungeonLibrary
             HitChance = 40;
             Block = 30;
             MaxLife = 15;
+            Life = MaxLife;
             MinDamage = 1;
             MaxDamage = 6;
             Description = "Undead creatures that come in various types and have different abilities, this one has yet to mature..";

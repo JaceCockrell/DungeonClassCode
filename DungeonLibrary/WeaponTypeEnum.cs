@@ -11,10 +11,11 @@ namespace DungeonLibrary
     // intent of this is to provide potential expansions, such as 
     public enum WeaponType
     {
-        Axe,
-        Daggers,
-        Bare_Hands,
-        Valkyrie_Armor,
-        Bow,
+        A_Axe,
+        B_Daggers,
+        C_Bare_Hands,
+        D_Valkyrie_Armor,
+        E_Bow,
+        Naked
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DungeonLibrary;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 
 namespace DungeonApp
 {
@@ -10,31 +11,107 @@ namespace DungeonApp
             #region Introduction
             //Start to play backround music? (.wav) < 100MB
             //System.Windows.Extensions (NuGet package)
-            Console.Title = "DUNGEON OF DOOM!";
-            Console.WriteLine("Welcome, Adventurer! Your Journey begins!");
+            Console.Title = "GOW Em";
+            Console.WriteLine("Welcome, Adventurer! Your Journey begins!\n\n");
+            Console.WriteLine("What is your name?");
+            string usrName = Console.ReadLine();
+            Console.Clear();
+
+
 
             #endregion
-
             // - variable to keep score
-
             int score = 0;
-            //TODO - Create a weapon
-            Weapon wep0 = new("Leviathan Axe", 3, 8, 12, true, WeaponType.Axe);
-            Weapon wep1 = new("Blades of Chaos", 2, 10, 10, true, WeaponType.Daggers);
-            Weapon wep2 = new("Guardian Shield", 1, 8, 33, false, WeaponType.Bare_Hands);
-            Weapon wep3 = new("Spear & Wings", 2, 12, 8, true, WeaponType.Valkyrie_Armor);
-            Weapon wep4 = new("Atreus Bow", 2, 12, 15, true, WeaponType.Bow);
 
-            List<Weapon> weapons = new() { wep0, wep1, wep2, wep3, wep4 };
+
+            // - Create a weapon
+            Weapon wep0 = new("Leviathan Axe", 6, 10, 12, true, WeaponType.A_Axe);
+            Weapon wep1 = new("Blades of Chaos", 4, 12, 10, true, WeaponType.B_Daggers);
+            Weapon wep2 = new("Guardian Shield", 2, 14, 33, false, WeaponType.C_Bare_Hands);
+            Weapon wep3 = new("Spear & Wings", 4, 12, 8, true, WeaponType.D_Valkyrie_Armor);
+            Weapon wep4 = new("Atreus Bow", 4, 12, 15, true, WeaponType.E_Bow);
+            Weapon wep5 = new("Naked", 1, 3, 15, false, WeaponType.Naked); 
+
+            Console.WriteLine("You are going to need to defend yourself " + usrName + "," + "\nbased on your decision I will give you a weapon of that type.\nPlease enter the letter before the weapon type you wish to choose...\n\n");
+
+            List<Weapon> weapons = new() { wep0, wep1, wep2, wep3, wep4 };// add protections
             int index = 1;
-            foreach (var item in weapons)
+
+            foreach (Weapon item in weapons)
             {
-                Console.WriteLine(index + "" + item.WeaponType); 
+                string weaponType = item.WeaponType.ToString().Replace("_"," ");
+                Console.WriteLine(weaponType);
+                index++;
+            }
+            string userChoice = Console.ReadLine();
+
+            Weapon userWeapon = wep5;
+
+            if(userChoice.ToLower() == "a" || userChoice.ToLower() == "axe")
+            {
+                userWeapon = wep0;
+            }
+            else if (userChoice.ToLower() == "b" || userChoice.ToLower() == "daggers")
+            {
+                userWeapon = wep1;
+            }
+            else if (userChoice.ToLower() == "c" || userChoice.ToLower() == "bare hands")
+            {
+                userWeapon = wep2;
+            }
+            else if (userChoice.ToLower() == "d" || userChoice.ToLower() == "valkyrie armor")
+            {
+                userWeapon = wep3;
+            }
+            else if (userChoice.ToLower() == "e" || userChoice.ToLower() == "bow")
+            {
+                userWeapon = wep4;
             }
 
+            Console.Clear();
+
+
+            
+            /*
+             * ClassicMonsters[] monsters = Enum.GetValues<ClassicMonsters>();                                           //.GetValues(typeof(ClassicMonsters))            foreach (ClassicMonsters item in monsters)            {                //If we build multi-word enum values, it's best to use underscores _ for spaces.                //This makes it easy to replace.                string formattedItem = item.ToString().Replace('_', ' ');                //The only other way to do this would be with a regular expression, which can be error prone and difficult to understand. NOTE, for this example to work, all classic monsters must be PascalCase rather than _ for spaces.                //string formattedItem = Regex.Replace(item.ToString(), "(\\B[A-Z])", " $1");                Console.WriteLine($"{(int)item + 1} - {formattedItem}");            }            Console.Write("\nChoose a classic monster from the list above (enter the number only): ");            int userChoice = Convert.ToInt32(Console.ReadLine());            ClassicMonsters userMonster = (ClassicMonsters)(userChoice - 1);
+             */
+            Console.WriteLine("What Race will you choose? \nPlease enter the letter before the Race you wish to choose...\n");
+            Race[] races = Enum.GetValues<Race>();//csf2 block3 enums.cs classicmonsters into an array list 
+            foreach (Race race in races)
+            {
+                Console.WriteLine($"{race.ToString().Replace("_", " ")}");
+            }
+
+            string usrRace = Console.ReadLine();
+
+            Race userRace = Race.A_Olympians;
+
+            if (usrRace.ToLower() == "a" || usrRace.ToLower() == "olympians")
+            {
+                userRace = Race.A_Olympians;
+            }
+            else if (usrRace.ToLower() == "b" || usrRace.ToLower() == "giants")
+            {
+                userRace = Race.B_Giants;
+            }
+            else if (usrRace.ToLower() == "c" || usrRace.ToLower() == "titans")
+            {
+                userRace = Race.C_Titans;
+            }
+            else if (usrRace.ToLower() == "d" || usrRace.ToLower() == "valkyries")
+            {
+                userRace = Race.D_Valkyries;
+            }
+            else if (usrRace.ToLower() == "e" || usrRace.ToLower() == "helwalkers")
+            {
+                userRace = Race.E_HelWalkers;
+            }
+
+            Console.Clear();
             // - Create a Player Object
-            //Recomended expansion let the user pick and chose name and race
-            Player player = new Player("Kratos", 70, 40, 50, Race.Olympians, wep1);
+            //********************Recomended expansion let the user pick and chose name and race**************************
+
+            Player player = new Player(usrName, 50, 30, 70, userRace, userWeapon);
 
             //Main Game Loop
             bool lose = false;//Main Game Loop
@@ -101,14 +178,14 @@ namespace DungeonApp
                             Console.WriteLine("\aWhat does that even mean!? Try again, but better..");
                             break;
                     }//end switch
-                    // Check player life. if dead GAME OVER
+                     // Check player life. if dead GAME OVER
+                    if (player.Life <= 0)
+                    {
+                        Console.WriteLine("\a\aYou died...");
+                        lose = true;
+                    }//TODO see if score % 5 == 0 either heal or add new menu piece this will appear every + 5 to score
                 } while (!reload && !lose);//While reload and lose are both false keep looping
 
-                if (player.Life <= 0)
-                {
-                    Console.WriteLine("\a\aYou died...");
-                    lose = true;
-                }
                 #endregion
 
             } while (!lose);// while lose is false keep looping
@@ -140,7 +217,7 @@ namespace DungeonApp
         }//end GetRoom
         private static Monster GetMonster()
         {
-            Draugr m1 = new Draugr("Draugr", 50, 40, 20, 1, 8, "Undead creatures that come in various types and have different abilities.", true);
+            Draugr m1 = new Draugr("Draugr", 30, 25, 20, 1, 8, "Undead creatures that come in various types and have different abilities.", true);
             Draugr m2 = new Draugr();
             Revenant m3 = new Revenant("Revenant", 30, 40, 15, 1, 6, "Ghost-like enemies that are difficult to hit and can move quickly.", false);
             Revenant m4 = new Revenant();

@@ -104,7 +104,8 @@ namespace DungeonLibrary
         //Methods
         public override string ToString()
         {
-            return $"Stats: \n" +
+            return $"Name: {Name}\n" +
+                $"Stats:\n" +
                 $"Maximum Damage: {MaxDamage}\n" +
                 $"Minimum Damage: {MinDamage}\n" +
                 $"Bonus Hits Chance: {BonusHitChance}\n" +

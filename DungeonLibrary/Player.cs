@@ -22,19 +22,19 @@ namespace DungeonLibrary
             #region (PlayerRace)
             switch (PlayerRace)
             {
-                case Race.Olympians:
+                case Race.A_Olympians:
                     HitChance += 6;
                     break;
-                case Race.Giants:
+                case Race.B_Giants:
                     EquipedWeapon.MaxDamage += 8;
                     break;
-                case Race.Titans:
+                case Race.C_Titans:
                     HitChance += 8;
                     break;
-                case Race.Valkyries:
+                case Race.D_Valkyries:
                     Block += 6;
                     break;
-                case Race.HelWalkers:
+                case Race.E_HelWalkers:
                     MaxLife += 10;
                     break;
                 default:
@@ -49,15 +49,15 @@ namespace DungeonLibrary
             string raceDescription = "";
             switch (PlayerRace)
             {
-                case Race.Olympians: raceDescription =" Olympian - The powerful and godly rulers of Mount Olympus.";
+                case Race.A_Olympians: raceDescription =" Olympian - The powerful and godly rulers of Mount Olympus.";
                     break;
-                case Race.Giants: raceDescription =" Giant - Massive and ancient beings with incredible strength and magical abilities.";
+                case Race.B_Giants: raceDescription =" Giant - Massive and ancient beings with incredible strength and magical abilities.";
                     break;
-                case Race.Titans:raceDescription =" Titian - Gigantic and powerful deities that predate the gods and goddesses of Mount Olympus.";
+                case Race.C_Titans:raceDescription =" Titian - Gigantic and powerful deities that predate the gods and goddesses of Mount Olympus.";
                     break;
-                case Race.Valkyries:raceDescription =" Valkyrie - Noble warrior maidens who serve the gods and guide the souls of fallen heroes to Valhalla.";
+                case Race.D_Valkyries:raceDescription =" Valkyrie - Noble warrior maidens who serve the gods and guide the souls of fallen heroes to Valhalla.";
                     break;
-                case Race.HelWalkers:raceDescription =" Hel-Walker - Undead warriors cursed by the goddess of death and sent to serve in her army in the realm of Helheim.";
+                case Race.E_HelWalkers:raceDescription =" Hel-Walker - Undead warriors cursed by the goddess of death and sent to serve in her army in the realm of Helheim.";
                     break;
                 default:
                     break;

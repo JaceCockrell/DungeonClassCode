@@ -27,6 +27,7 @@ namespace DungeonLibrary
             HitChance = 50;
             Block = 25;
             MaxLife = 15;
+            Life = MaxLife;
             MinDamage = 1;
             MaxDamage = 5;
             Description = "Ancient robotic beings that possess powerful elemental attacks, this one hasn't quite accessed its full potential ";

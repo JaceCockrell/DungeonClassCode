@@ -28,9 +28,10 @@ namespace DungeonLibrary
             HitChance = 40;
             Block = 50;
             MaxLife = 15;
+            Life = MaxLife;
             MinDamage = 1;
             MaxDamage = 4;
-            Description = "Ghost-like enemies that are difficult to hit and can move quickly.";
+            Description = "Ghost-like enemies that are difficult to hit and can move quickly. The extreme speed weakens the blows but they occur more often. ";
             IsDemonic = true;
         }
 
